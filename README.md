@@ -1,8 +1,8 @@
-# Week - NULL
-```Hafta veya Ödev Sayısı (NULL değiştir)```
+# Week - 6
+
 
 # Homework 
-```Ödev```
+```Ödev 2```
 
 
 ## Homework Description
@@ -12,4 +12,4 @@
 
 ## Author
 
-```Ödevi yapan```
+```Fatma Kurtuluş```

@@ -1,0 +1,21 @@
+todo{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+}
+select{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+}
+button{
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
+}

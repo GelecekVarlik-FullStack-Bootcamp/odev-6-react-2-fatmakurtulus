@@ -1,47 +1,53 @@
-import React, { Component } from 'react';
 import logo from './logo.svg';
-import axios from 'axios';
 import './App.css';
-import Login from './Login/Login.js'
-const apiUrl = `http://localhost:8080`;
+import {BrowserRouter,Route,Routes} from 'react-router-dom';
+import Login from './components/login/Login';
+import Register from './components/register/Register';
+import Category from './components/category/Category';
+import State from './components/state/State';
+import Todo from './components/todo/Todo';
 
-class App extends Component {
-  state = {
-    users: []
-  };
+function App() {
+  
+ 
+//login yapma server üzrindeki bilgilere ulaşılıyor
+/*const api =axios.create({baseURL:'http://localhost:80/'});
 
-  async createUser() {
-    await axios.get(apiUrl + '/user-create');
-    this.loadUsers();
-  }
+api({
+  method: 'post',
+  url:'auth/login',
+  data: {
+    
+      username:'deneme',
+      password:'1234'
+    } 
+  }).then((response) => {
+  console.log(response.data);
+  console.log("Succes");
+ 
+}, (error) => {
+  console.log(error);
+});*/
 
-  async loadUsers() {
-    const res = await axios.get(apiUrl + '/users');
-    this.setState({
-      users: res.data
-    });
-  }
 
-  componentDidMount() {
-    this.loadUsers();
-  }
 
-  render() {
-    return (
-      <div>
-       
-          <button >Create User</button>
-          <p>Users list:</p>
-          <ul>
-            {this.state.users.map(user => (
-              <li key={user._id}>id: {user._id}</li>
-            ))}
-          </ul>
-          <Login/>
-        
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+  
+  <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Register />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/Category" element={<Category />} />
+          <Route path="/State" element={<State />} />
+          <Route path="/Todo" element={<Todo />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
+
+
 
 export default App;
